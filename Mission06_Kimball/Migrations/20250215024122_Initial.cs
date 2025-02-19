@@ -11,7 +11,7 @@ namespace Mission06_Kimball.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Movies",
+                name: "Movie",
                 columns: table => new
                 {
                     MovieID = table.Column<int>(type: "INTEGER", nullable: false)
@@ -35,7 +35,7 @@ namespace Mission06_Kimball.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Movies");
+                name: "Movie");
         }
     }
 }

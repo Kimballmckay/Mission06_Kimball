@@ -6,7 +6,7 @@ namespace Mission06_Kimball.Models
     {
         [Key]
         [Required]
-        public int MovieID { get; set; }
+        public int MovieId { get; set; }
 
         [Required(ErrorMessage = "Category is required.")]
         public string Category { get; set; }
@@ -26,7 +26,9 @@ namespace Mission06_Kimball.Models
         public bool Edited { get; set; }
 
         [MaxLength(25, ErrorMessage = "Lent cannot exceed 25 characters.")]
-        public string? Lent { get; set; }
+        public string? LentTo { get; set; }
+
+        public bool CopiedToPlex { get; set; }
 
         [MaxLength(25, ErrorMessage = "Notes cannot exceed 25 characters.")]
         public string? Notes { get; set; }

@@ -21,7 +21,7 @@ namespace Mission06_Kimball.Migrations
 
             modelBuilder.Entity("Mission06_Kimball.Models.Movie", b =>
                 {
-                    b.Property<int>("MovieID")
+                    b.Property<int>("MovieId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -56,9 +56,9 @@ namespace Mission06_Kimball.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("MovieID");
+                    b.HasKey("MovieId");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movie");
                 });
 #pragma warning restore 612, 618
         }
