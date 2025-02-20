@@ -1,15 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission06_Kimball.Models
 {
     public class Movie
     {
+        [ForeignKey("CategoryId")]
+        public int CategoryId { get; set; }
+        public Category? Category { get; set; }
+        
         [Key]
         [Required]
         public int MovieId { get; set; }
-
-        [Required(ErrorMessage = "Category is required.")]
-        public string Category { get; set; }
 
         [Required(ErrorMessage = "Title is required.")]
         public string Title { get; set; }

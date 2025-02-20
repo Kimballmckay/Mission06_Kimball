@@ -11,7 +11,7 @@ namespace Mission06_Kimball.Models
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Category> Categories { get; set; }
 
-        public override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(
                 new Category { CategoryId = 1, CategoryName = "Miscellaneous" },
