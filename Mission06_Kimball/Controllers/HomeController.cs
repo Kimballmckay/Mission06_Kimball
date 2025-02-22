@@ -23,6 +23,8 @@ namespace Mission06_Kimball.Controllers
             return View();
         }
 
+        // Add movie Get and Post
+
         [HttpGet]
         public IActionResult AddMovie()
         {
@@ -62,6 +64,8 @@ namespace Mission06_Kimball.Controllers
             return View(movies);
         }
 
+        // Edit Get and Post
+
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -83,6 +87,8 @@ namespace Mission06_Kimball.Controllers
 
             return RedirectToAction("MovieList");
         }
+
+        // Delete Get and Post
 
         [HttpGet]
         public IActionResult Delete(int id)
