@@ -6,7 +6,7 @@ namespace Mission06_Kimball.Models
     public class Movie
     {
         [ForeignKey("CategoryId")]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         public Category? Category { get; set; }
         
         [Key]
@@ -17,13 +17,12 @@ namespace Mission06_Kimball.Models
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Year is required.")]
-        public string Year { get; set; }
+        [Range(1888, 2025, ErrorMessage = "Year must be between 1888 and 2025.")]
+        public int Year { get; set; }
 
-        [Required(ErrorMessage = "Director is required.")]
-        public string Director { get; set; }
+        public string? Director { get; set; }
 
-        [Required(ErrorMessage = "Rating is required.")]
-        public string Rating { get; set; }
+        public string? Rating { get; set; }
 
         public bool Edited { get; set; }
 

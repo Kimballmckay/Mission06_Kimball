@@ -31,11 +31,11 @@ namespace Mission06_Kimball.Migrations
                 {
                     MovieId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: true),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
-                    Year = table.Column<string>(type: "TEXT", nullable: false),
-                    Director = table.Column<string>(type: "TEXT", nullable: false),
-                    Rating = table.Column<string>(type: "TEXT", nullable: false),
+                    Year = table.Column<int>(type: "INTEGER", nullable: false),
+                    Director = table.Column<string>(type: "TEXT", nullable: true),
+                    Rating = table.Column<string>(type: "TEXT", nullable: true),
                     Edited = table.Column<bool>(type: "INTEGER", nullable: false),
                     LentTo = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true),
                     CopiedToPlex = table.Column<bool>(type: "INTEGER", nullable: false),
@@ -48,8 +48,7 @@ namespace Mission06_Kimball.Migrations
                         name: "FK_Movies_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "CategoryId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "CategoryId");
                 });
 
             migrationBuilder.InsertData(
